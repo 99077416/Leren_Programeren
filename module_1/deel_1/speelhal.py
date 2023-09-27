@@ -1,12 +1,12 @@
-personen = 4
-ticket = 7.45
+PERSONEN = 4
+TICKET = 7.45
 
-prijs_vr = 0.074
-tijd_vr = 45
+PRIJS_VR = 0.074
+TIJD_VR = 45
 
-totaal_ticket = ticket * personen
-totaal_vr = tijd_vr * prijs_vr
+TOTAAL_TICKET = TICKET * PERSONEN
+TOTAAL_VR = TIJD_VR * PRIJS_VR
 
-totaal = totaal_ticket + totaal_vr
+TOTAAL = TOTAAL_TICKET + TOTAAL_VR
 
-print(totaal)
+print(TOTAAL)

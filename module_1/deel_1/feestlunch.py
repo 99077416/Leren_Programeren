@@ -1,14 +1,14 @@
-prijs_croissant = 0.39
-aantal_croissant = 17
+PRIJS_CROISSANT = 0.39
+AANTAL_STOKBROOD = 17
 
-prijs_stokbrood = 2.78 
-aantal_stokbrood = 2
+PRIJS_STOKBROOD = 2.78 
+AANTAL_STOKBROOD = 2
 
-prijs_kortingsbon = 0.50
-aantal_kortingsbon = 3
+PRIJS_KORTINGSBON = 0.50
+AANTAL_KORTINGSBON = 3
 
-totaal_croissant = aantal_croissant * prijs_croissant 
-totaal_stokbrood = prijs_stokbrood * aantal_stokbrood
-totaal_kortingsbon = prijs_kortingsbon * aantal_kortingsbon
-totaal = totaal_croissant + totaal_stokbrood - totaal_kortingsbon
-print(totaal)
+TOTAAL_CROISSANT = AANTAL_STOKBROOD * PRIJS_CROISSANT 
+TOTAAL_STOKBROOD = PRIJS_STOKBROOD * AANTAL_STOKBROOD
+TOTAAL_KORTINGSBON = PRIJS_KORTINGSBON * AANTAL_KORTINGSBON
+TOTAAL = TOTAAL_CROISSANT + TOTAAL_STOKBROOD - TOTAAL_KORTINGSBON
+print(TOTAAL)
