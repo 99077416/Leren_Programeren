@@ -7,9 +7,9 @@ AANTAL_STOKBROOD = 2
 PRIJS_KORTINGSBON = 0.50
 AANTAL_KORTINGSBON = 3
 
-TOTAAL_CROISSANT = AANTAL_CROISSANT * PRIJS_CROISSANT 
-TOTAAL_STOKBROOD = PRIJS_STOKBROOD * AANTAL_STOKBROOD
-TOTAAL_KORTINGSBON = PRIJS_KORTINGSBON * AANTAL_KORTINGSBON
-TOTAAL = TOTAAL_CROISSANT + TOTAAL_STOKBROOD - TOTAAL_KORTINGSBON
+totaal_croissant = AANTAL_CROISSANT * PRIJS_CROISSANT 
+totaal_stokbrood = PRIJS_STOKBROOD * AANTAL_STOKBROOD
+totaal_kortingsbon = PRIJS_KORTINGSBON * AANTAL_KORTINGSBON
+totaal = totaal_croissant + totaal_stokbrood - totaal_kortingsbon
 
-print(f'De feestlunch kost je bij de bakker {TOTAAL} euro voor de {AANTAL_CROISSANT} croissantjes en de {AANTAL_STOKBROOD} stokbroden als de {AANTAL_KORTINGSBON} kortingsbonnen nog geldig zijn!')
+print(f'De feestlunch kost je bij de bakker {totaal} euro voor de {AANTAL_CROISSANT} croissantjes en de {AANTAL_STOKBROOD} stokbroden als de {AANTAL_KORTINGSBON} kortingsbonnen nog geldig zijn!')
