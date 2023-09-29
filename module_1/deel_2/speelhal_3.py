@@ -1,12 +1,14 @@
-PERSONEN = int(input('hoeveel personen? '))
-TICKET = int(input('prijs ticket in centen:'))
+personen = int(input('hoeveel personen? '))
+PRIJS_TICKET = 7.45
 
-PRIJS_VR = int(input('prijs vr voor 5 minuten in centen:'))
-TIJD_VR = int(input('hoeveel minuten vr? '))
+PERIODE = 10
+PRIJS_VR_PERIODE = 0.54
+tijd_vr = int(input('hoeveel minuten vr? '))
 
-totaal_ticket = TICKET * PERSONEN
-totaal_vr = TIJD_VR * PRIJS_VR // 5
+
+totaal_ticket = PRIJS_TICKET * personen
+totaal_vr = round(tijd_vr * PRIJS_VR_PERIODE / PERIODE,2)
 
 totaal = totaal_ticket + totaal_vr
 
-print(f'Dit geweldige dagje-uit met {PERSONEN} mensen in de Speelhal met {TIJD_VR} minuten VR kost je maar {totaal} cent')
+print(f'Dit geweldige dagje-uit met {personen} mensen in de Speelhal met {tijd_vr} minuten VR kost je maar {totaal} euro')
