@@ -4,9 +4,9 @@ TICKET = 7.45
 PRIJS_VR = 0.074
 TIJD_VR = 45
 
-TOTAAL_TICKET = TICKET * PERSONEN
-TOTAAL_VR = TIJD_VR * PRIJS_VR
+totaal_ticket = TICKET * PERSONEN
+totaal_vr = TIJD_VR * PRIJS_VR
 
-TOTAAL = TOTAAL_TICKET + TOTAAL_VR
+totaal = totaal_ticket + totaal_vr
 
-print(TOTAAL)
+print(totaal)
