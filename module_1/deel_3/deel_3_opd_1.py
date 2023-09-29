@@ -7,3 +7,6 @@ if getal_a > getal_b:
 elif getal_a < getal_b:
     min = getal_b
     print(f'a is het kleinste getal: {min}')
+else:
+    if getal_a == getal_b:
+        print('a en b zijn even groot') 
