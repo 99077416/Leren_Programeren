@@ -15,7 +15,9 @@ MIN_ERVARING_DIEREN = 4
 MIN_ERVARING_JONGLEREN = 5
 MIN_ERVARING_ACROBATIEK = 3
 
-if vrachtwagen_bewijs == 'ja' and hoge_hoed == 'ja' and gewicht > MIN_GEWICHT and gewicht < MAX_GEWICHT and lengte > MIN_LENGTE and lengte < MAX_LENGTE and Certificaat == 'ja' and (ervaring_dieren > MIN_ERVARING_DIEREN or ervaring_jongleren > MIN_ERVARING_JONGLEREN or ervaring_jongleren > MIN_ERVARING_JONGLEREN or ervaring_acrobatiek > MIN_ERVARING_ACROBATIEK):
-    print('u mag solliciteren.')
-else:
-    print('u mag helaas niet solliciteren.')
+vrachtwagen_bewijs_ok = vrachtwagen_bewijs == 'ja'
+hoge_hoed_ok = hoge_hoed == 'ja'
+gewicht_ok = gewicht > MIN_GEWICHT and gewicht < MAX_GEWICHT
+lengte_ok = lengte > MIN_LENGTE and lengte < MAX_LENGTE
+Certificaat_ok = Certificaat == 'ja' 
+ervaring_ok = ervaring_dieren > 4
