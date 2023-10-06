@@ -13,15 +13,16 @@ if ondernemer == 'ja':
     ervaring_ondernemer = int(input('hoeveel jaar bent u ondernemer? '))
     werknemers = int(input('hoeveel werknemers heeft u? '))
 geslacht = input('wat is uw geslacht? man/vrouw/anders ')
-if geslacht == 'man':
-    snor = int(input('hoe breed is uw snor in cm? '))
-    haar_kleur = False
-    lengte_haar = False
-    glimlach = False
-elif geslacht == 'vrouw':
+
+if geslacht == 'vrouw':
     haar_kleur = input('welke kleur is uw haar? ')
     lengte_haar = int(input('hoelang is uw haar in cm? '))
     snor = False
+    glimlach = False
+elif geslacht == 'man':
+    snor = int(input('hoe breed is uw snor in cm? '))
+    haar_kleur = False
+    lengte_haar = False
     glimlach = False
 elif geslacht == 'anders':
     glimlach = int(input('hoe breed is uw glimlach in cm? '))
@@ -29,9 +30,7 @@ elif geslacht == 'anders':
     haar_kleur = False
     lengte_haar = False
 
-
 print()
-
 
 MIN_GEWICHT = 90
 MAX_GEWICHT = 120

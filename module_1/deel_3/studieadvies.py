@@ -30,19 +30,18 @@ Kies 0: altijd; 1: vaak; 2: regelmatig; 3: soms; 4: nooit '''))
 
 if aantal_weken_vraag >= 10:
     competentie_stelling_6 = int(input('''
-    Ik voel geen interesse in nieuwe programmeertechnieken.
-    Kies 0: altijd; 1: vaak; 2: regelmatig; 3: soms; 4: nooit '''))
+Ik voel geen interesse in nieuwe programmeertechnieken.
+Kies 0: altijd; 1: vaak; 2: regelmatig; 3: soms; 4: nooit '''))
 
     competentie_stelling_7 = int(input('''
-    Ik kopieer code van anderen en lever dat in alsof het helemaal van mij is.
-    Kies 0: altijd; 1: vaak; 2: regelmatig; 3: soms; 4: nooit '''))
+Ik kopieer code van anderen en lever dat in alsof het helemaal van mij is.
+Kies 0: altijd; 1: vaak; 2: regelmatig; 3: soms; 4: nooit '''))
 
 score = competentie_stelling_1 + competentie_stelling_2 + competentie_stelling_3 + competentie_stelling_4 + competentie_stelling_5
-gemidelde_score = score // 5
+gemidelde_score = score / 5
 if aantal_weken_vraag >= 10:
     score = score + competentie_stelling_6 + competentie_stelling_7
-if aantal_weken_vraag >= 10:
-    gemidelde_score = score // 7
+    gemidelde_score = score / 7
 
 COMPETENTIE_ADVIES_ZORGELIJK = '''
 Het lijkt erop dat je nog weinig zelfvertrouwen, voldoening en plezier ervaart 
