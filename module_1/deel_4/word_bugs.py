@@ -1,5 +1,5 @@
-a = len(str(input('Geef een woord')))
-b = len(str(input('Geef nog een woord')))
+a = len(input('Geef een woord'))
+b = len(input('Geef nog een woord'))
 
 if a > b:     
     print('Woord 1 heeft meer letters dan woord 2')
