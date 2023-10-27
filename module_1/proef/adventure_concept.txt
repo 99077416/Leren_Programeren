@@ -1,0 +1,3 @@
+verhaal: dorp wordt aangevallen door trollen
+onderwerp: middeleeuws dorp
+doel: dorp redden
