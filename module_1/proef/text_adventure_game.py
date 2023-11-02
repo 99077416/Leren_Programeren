@@ -32,7 +32,6 @@ while opnieuw == 'ja':
             sleep(2)
             print('wat ga je doen?')
             aanval = input('(1)zoek een wapen. (2)probeer zo snel mogelijk uit het dorp te komen. ')
-            
             if aanval == '1':
                 print()
                 print('je gaat naar buiten en zoekt naar een wapen.')
@@ -109,21 +108,73 @@ while opnieuw == 'ja':
                                     sleep(2)
                                     print('GAME OVER')
                                     break
-                        
                     vecht = input('(1)probeer dicht bij te komen. (2)geef op en ga het dorp uit. ')
-
                     if vecht == '1':
                         print()
                         print('je probeert dichter bij de leider te komen')
                         sleep(2)
+                        print('hij staat buiten zijn tent.')
+                        sleep(2)
+                        if speer or mes == 'ja':
+                            print('je snijd een opening in de leider zijn tent.')
+                            print()
+                            sleep(2)
+                            print('je verstopt en wacht tot hij naar binnen komt.')
+                            sleep(3)
+                            print('hij loopt naar binnen en je steekt het mes in zijn rug.')
+                            sleep(3)
+                            print('het dorp is gered!')
+                            sleep(2)
+                            print('GEWONNEN!')
+                            break
+                        else:
+                            print()
+                            print('je loopt rond de tent opzoek naar een opening.')
+                            sleep(2)
+                            print('je komt aan de andere kant van de tent en botst tegen de leider aan.')
+                            print()
+                            sleep(3)
+                            print('hij wordt boos en maakt je dood.')
+                            sleep(2)
+                            print('GAME OVER')
+                            break
+
+
+
+
+
 
 
 
 
 
             print()
-            print('je gaat richting de uitgang van het dorp. ')
+            print('je gaat richting de uitgang van het dorp, ')
             sleep(1)
+            print('maar de poort wordt bewaakt.')
+            sleep(2)
+            poort = input('(1)loop gewoon langs hun alsof je de baas bent.(2) geef ze allebij 50 euro. ')
+            if poort == '1':
+                print()
+                print('je loopt langs de bewakers alsof je er bij hoort.')
+                sleep(3)
+                print('ze hebben je gelijk door en maken je dood.')
+                sleep(3)
+                print('GAME OVER')
+                break
+            elif poort == '2':
+                print()
+                print('je geeft de bewakers allebij 50 euro.')
+                sleep(2)
+                print('ze verdienen niet zo veel dus ze laten je door')
+                sleep(3)
+                print('je loopt het dorp uit en rent zo snel mogelijk weg.')
+                sleep(3)
+                print('je hebt het overleeft,')
+                sleep(1)
+                print('maar je hebt iedereen in het dorp achtergelaten.')
+                break
+
 
 
 
