@@ -84,8 +84,8 @@ while opnieuw == 'ja':
                     print()
                     print('wat doe je?')
                     if speer == True:
-                        gokken = input('probeer speer naar de leider te gooien? ja/nee ')
-                        if gokken == 'ja':
+                        gooien = input('probeer speer naar de leider te gooien? ja/nee ')
+                        if gooien == 'ja':
                             kans = randint(1,3)
                             gooi = randint(1,3)
                             print(kans)
