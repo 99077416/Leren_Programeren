@@ -69,45 +69,52 @@ while opnieuw == 'ja':
                     print('je ziet de leider staan.')
                     sleep(1)
                     print('er staat een bevijliger naast hem.')
+                    bewaker = True
                     print()
                     sleep(3)
-                    if steen == 'ja':                         
-                        print('je gooit de steen om de bevijliger af te leiden')           #afleiden = input('gooi steen om bevijliger af te leiden? ja/nee ')
-                        steen = 'nee'
-                        sleep(2)
-                        print('de bevijliger loopt weg om te zien wat het was.')
-                        sleep(2)
-                        print()
-                        print('wat doe je?')
-                        if speer == True:
-                            gokken = input('probeer speer naar de leider te gooien? ja/nee ')
-                            if gokken == 'ja':
-                                kans = randint(1,4)
-                                gooi = randint(1,4)
-                                print(kans)
-                                print(gooi)
-                                if kans == gooi:
-                                    print()
-                                    print('je gooit raakt!')
-                                    sleep(2)
-                                    print()
-                                    print('je hebt de leider verslagen!')
-                                    sleep(2)
-                                    print('het leger trekt terug.')
-                                    sleep(2)
-                                    print('je hebt het dorp gered!')
-                                    sleep(1)
-                                    print('GEWONNEN!')
-                                    break
+                    if steen == 'ja':
+                        afleiden = input('gooi steen om bevijliger af te leiden? ja/nee ')
+                        if afleiden == 'ja':
+                            print('je gooit de steen om de bevijliger af te leiden')           
+                            steen = 'nee'
+                            sleep(3)
+                            print('de bevijliger loopt weg om te zien wat het was.')
+                            bewaker = False
+                    sleep(2)
+                    print()
+                    print('wat doe je?')
+                    if speer == True:
+                        gokken = input('probeer speer naar de leider te gooien? ja/nee ')
+                        if gokken == 'ja':
+                            kans = randint(1,3)
+                            gooi = randint(1,3)
+                            print(kans)
+                            print(gooi)
+                            if kans == gooi:
+                                print()
+                                print('je gooit raakt!')
+                                sleep(2)
+                                print()
+                                print('de leider is dood!')
+                                sleep(2)
+                                print('het leger trekt terug.')
+                                sleep(2)
+                                print('je hebt het dorp gered!')
+                                sleep(1)
+                                print('GEWONNEN!')
+                                break
+                            else:
+                                print()
+                                sleep(1)
+                                print('je gooit voledig mis.')
+                                sleep(2)
+                                if bewaker == True:
+                                    print('de bewaker ziet je en maakt je dood.')
                                 else:
-                                    print()
-                                    sleep(1)
-                                    print('je gooit voledig mis.')
-                                    sleep(2)
-                                    print('de bevijliger ziet je en maakt je dood.')
-                                    sleep(2)
-                                    print('GAME OVER')
-                                    break
+                                    print('de leider ziet je en maakt je dood.')
+                                sleep(2)
+                                print('GAME OVER')
+                                break
                     vecht = input('(1)probeer dicht bij te komen. (2)geef op en ga het dorp uit. ')
                     if vecht == '1':
                         print()
@@ -120,9 +127,12 @@ while opnieuw == 'ja':
                             print()
                             sleep(2)
                             print('je verstopt en wacht tot hij naar binnen komt.')
+                            sleep(4)
+                            print('hij loopt naar binnen en je steekt hem in zijn rug.')
+                            sleep(4)
+                            print('de leider is verslagen!')
                             sleep(3)
-                            print('hij loopt naar binnen en je steekt het mes in zijn rug.')
-                            sleep(3)
+                            print()
                             print('het dorp is gered!')
                             sleep(2)
                             print('GEWONNEN!')
@@ -138,16 +148,6 @@ while opnieuw == 'ja':
                             sleep(2)
                             print('GAME OVER')
                             break
-
-
-
-
-
-
-
-
-
-
             print()
             print('je gaat richting de uitgang van het dorp, ')
             sleep(1)
@@ -168,19 +168,17 @@ while opnieuw == 'ja':
                 sleep(2)
                 print('ze verdienen niet zo veel dus ze laten je door')
                 sleep(3)
+                print()
                 print('je loopt het dorp uit en rent zo snel mogelijk weg.')
                 sleep(3)
+                print()
                 print('je hebt het overleeft,')
                 sleep(1)
                 print('maar je hebt iedereen in het dorp achtergelaten.')
+                sleep(3)
+                print()
+                print('GEWONNEN?')
                 break
-
-
-
-
-
-
-
     sleep(1)
     print()
     opnieuw = input('opnieuw proberen? ja/nee ')
