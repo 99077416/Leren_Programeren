@@ -1,0 +1,11 @@
+acties:
+
+robotArm.moveRight()
+
+robotArm.moveLeft()
+
+robotArm.grab()
+
+robotArm.drop()
+
+robotArm.speed = 5
