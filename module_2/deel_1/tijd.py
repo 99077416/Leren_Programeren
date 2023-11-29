@@ -1,10 +1,11 @@
-ochtend = 1
-middag = 1
 
-for a in range(0,12):
-    print(f'{ochtend}am')
-    ochtend += 1
-    if ochtend > 12:
-        for a in range(0,12):
-            print(f'{middag}pm')
-            middag += 1
+for uur in range(24):
+    printuur = uur
+    if printuur > 12:
+        printuur -= 12
+    ampm = 'pm'
+
+    if uur < 12:
+        ampm = 'am'
+        
+    print(f'{printuur}{ampm}')
