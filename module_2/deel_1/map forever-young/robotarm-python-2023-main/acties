@@ -8,4 +8,6 @@ robotArm.grab()
 
 robotArm.drop()
 
+robotArm.scan()
+
 robotArm.speed = 5
