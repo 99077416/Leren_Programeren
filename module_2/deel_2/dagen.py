@@ -1,25 +1,28 @@
 week = ('maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag','zondag')
 
-werkdagen = week[0], week[1], week[2], week[3], week[4]
-
-weekend = week[5], week[6]
-
-week_omgekeerd = tuple(reversed(week))
-
-werkdagen_omgekeerd = tuple(reversed(werkdagen))
-
-weekend_omgekeerd = tuple(reversed(weekend))
+for i in range(7):
+    print(week[i])
 
 print()
-print(f'Alle dagen van de week zijn: {week}')
+
+for i in range(5):
+    print(week[i])
+
 print()
-print(f'De werkdagen zijn: {werkdagen}')
+
+for i in range(5,7):
+    print(week[i])
+
 print()
-print(f'De weekenddagen zijn: {weekend}')
+
+for i in range(6,-1,-1):
+    print(week[i])
+
 print()
-print(f'Alle dagen van de week in omgekeerde volgorde zijn: {week_omgekeerd}')
+
+for i in range(4,-1,-1):
+    print(week[i])
 print()
-print(f'De werkdagen in omgekeerde volgorde zijn: {werkdagen_omgekeerd}')
-print()
-print(f'De weekenddagen in omgekeerde volgorde zijn: {weekend_omgekeerd}')
-print()
+
+for i in range(6,4,-1):
+    print(week[i])
