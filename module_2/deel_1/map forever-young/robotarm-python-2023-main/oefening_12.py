@@ -7,6 +7,7 @@ robotArm = RobotArm('exercise 12')
 for i in range(8):
         robotArm.moveRight()
 for i in range(1,10):
+    print(i)
     robotArm.grab()
     color = robotArm.scan()
     if color == 'red':

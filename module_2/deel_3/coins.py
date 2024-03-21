@@ -4,21 +4,22 @@
 # function of program:
 # structure of program: 
 
-toPay = int(float(input('Amount to pay: ')) * 100) #
-paid = int(float(input('Paid amount: ')) * 100) #
-change = paid - toPay #
-returned = []
-if change > 0: #
-  coinValue = 500 #
-  
-  while change > 0 and coinValue > 0: #
-    nrCoins = change // coinValue #
+dictionary = {}
+toPay = int(float(input('Amount to pay: ')) * 100) # hoeveel het product kost
+paid = int(float(input('Paid amount: ')) * 100) # hoeveel de klant heeft betaald
+change = paid - toPay # berekend wat je terug moet geven
 
-    if nrCoins > 0: #
-      print('return maximal ', nrCoins, ' coins of ', coinValue, ' cents!' ) #
-      nrCoinsReturned = int(input('How many coins of ' + str(coinValue) +  ' cents did you return? ')) #
-    
-      change -= nrCoinsReturned * coinValue #
+if change > 0: # als je nog wat moet terug geven
+  coinValue = 500 # waarde van het geld
+  
+  while change > 0 and coinValue > 0: # als je nog wat moet terug geven
+    nrCoins = change // coinValue # hoeveel je moet terug geven
+
+    if nrCoins > 0: # als je nog wat moet terug geven
+      print('return maximal ', nrCoins, ' coins of ', coinValue, ' cents!' ) # print hoeveel je terug moet geven
+      nrCoinsReturned = int(input('How many coins of ' + str(coinValue) +  ' cents did you return? ')) # invullen wat je hebt terug gegeven
+      change -= nrCoinsReturned * coinValue # nieuw wisselgeld berekenen
+      dictionary[coinValue] = nrCoinsReturned
 # comment on code below: 
     if coinValue == 500:
       coinValue = 200
@@ -39,7 +40,17 @@ if change > 0: #
     else:
       coinValue = 0
 
-if change > 0: #
+if change > 0: #  als je het geld niet hebt terug gegeven
   print('Change not returned: ', str(change) + ' cents')
 else:
   print('done') 
+  print()
+  print('terug gegeven:')
+
+#Print na de while loop ook een overzicht van alle teruggegeven muntstukken:
+#per soort muntstuk hoeveel zijn er teruggeven.
+  for muntsoort in dictionary:
+    print(f'{dictionary[muntsoort]} munten van {muntsoort} ')
+
+  # for i in range(len(list)):
+  #   print(f'{list[i]}  {value[i]}')

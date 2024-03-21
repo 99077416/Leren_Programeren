@@ -4,7 +4,8 @@ robotArm = RobotArm()
 robotArm.randomLevel(1,7)
 
 # Jouw python instructies zet je vanaf hier:
-for i in range(1,10):
+
+for i in range(1,9):
     
     robotArm.grab()
     box = robotArm.scan()
