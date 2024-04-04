@@ -1,22 +1,22 @@
 
-dict = {}
-vraag = 'ja'
+boodschappen = {}
+toevoegen = 'ja'
 
-while vraag == 'ja':
+while toevoegen == 'ja':
     artikel = input('welk artikel wilt u toevoegen. ').lower()
     aantal = int(input(f'hoeveel {artikel} wilt u toevoegen? '))
-    if artikel in dict:
-        dict[f'{artikel}'] += aantal
+    if artikel in boodschappen:
+        boodschappen[f'{artikel}'] += aantal
     else:
-        dict[f'{artikel}'] = aantal
-    vraag = input('wilt u nog iets toevoegen? ')
+        boodschappen[f'{artikel}'] = aantal
+    toevoegen = input('wilt u nog iets toevoegen? ')
 
 
 
 
 print('-[ BOODSCHAPPENLIJST ]-')
 print()
-for i in dict:
-    print(f'{dict[i]}x {i}')
+for i in boodschappen:
+    print(f'{boodschappen[i]}x {i}')
 print()
 print('-----------------------')

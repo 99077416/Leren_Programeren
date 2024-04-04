@@ -4,13 +4,15 @@ PRIJS_CHAMPAGNE = 12.30
 
 DRANKJES = ('cola', 'bier', 'champagne')
 VIP_LIST = ('jeroen', 'jouke', 'rudi')
-
+stempel = False
 #bouw hieronder de floowchart na
 
 age = int(input('hoe oud ben je? '))
 x = 21 - age
+toegang_jaar = 18 - age
 if age < 18:
     print('sorry je mag niet naar binnen.')
+    print(f'probeer het in {toegang_jaar} jaar nog eens')
 
 else:
     naam = input('wat is je naam? ')
@@ -25,8 +27,8 @@ else:
         if age >= 21:
             print('je krijgt van mij een stempel')
             stempel = True
-        else:
-            stempel = False
+
+            
 
 
     drank = input('wat wil je drinken? ')
@@ -34,7 +36,7 @@ else:
         if drank == 'champagne':
             if bandje:
                 if bandje == 'blauw':
-                    print(f'alstublieft je {drank}, dat is dan {PRIJS_CHAMPAGNE}')
+                    print(f'alstublieft je {drank}, dat is dan €{PRIJS_CHAMPAGNE}')
                 else:
                     print('sorry je mag geen alcohol bestellen onder de 21')
                     print(f'probeer het in {x} jaar nog eens')
@@ -48,7 +50,7 @@ else:
                 if bandje:
                     print('alstublieft, complimenten van het huis')
                 else:
-                    print(f'alstublieft je {drank}, dat is dan {PRIJS_BIER} ')
+                    print(f'alstublieft je {drank}, dat is dan €{PRIJS_BIER} ')
             else:
                 print('sorry je mag geen alcohol bestellen onder de 21')
                 print(f'probeer het in {x} jaar nog eens')
@@ -56,7 +58,7 @@ else:
             if bandje:
                     print('alstublieft, complimenten van het huis')
             else:
-                print(f'alstublieft je {drank}, dat is dan{PRIJS_BIER} ')
+                print(f'alstublieft je {drank}, dat is dan €{PRIJS_BIER} ')
                 
         
     else:
