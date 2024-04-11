@@ -1,9 +1,8 @@
 from fruitmand2 import fruitmand
-from random import randint
+from random import choice
 
 aantal = int(input('getal: '))
 
+
 for i in range(aantal):
-    random = randint(1,len(fruitmand)-1)
-    fruit = fruitmand[random]
-    print(fruit['name'])
+    print(choice(fruitmand)['name'])
