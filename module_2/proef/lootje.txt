@@ -1,0 +1,16 @@
+toevoegen = ja
+
+zolang toevoegen ja is:
+vraag naam
+als de naam niet in lijst namen zit
+zet naam in lijst namen
+als de lijst 3 namen heeft
+vraag of gebruiker nog een naam wil toevoegen
+
+schud lijst namen
+
+geef namen een lootje:
+als de naam de laatste naam in de lijst is 
+geef lootje van eerste naam 
+ander geef lootje van volgende naam in de lijst
+
