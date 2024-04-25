@@ -7,7 +7,7 @@ while toevoegen == 'ja':
     if naam not in namen:
         namen.append(naam)
     if len(namen) >= 3:
-        toevoegen = input('nog een naam toevoegen?')
+        toevoegen = input('nog een naam toevoegen? ')
 
 shuffle(namen)
 
@@ -17,6 +17,8 @@ for i in range(0,len(namen)):
     else:
         lootjes[namen[i]] = namen[i+1]
 
+opvragen = input('van wie wil je het lootje weten? ')
 
-for i in lootjes:
-    print(f'{i} {lootjes[i]}')
+for naam in lootjes:
+    if naam == opvragen:
+        print(f'{opvragen} is gekoppeld aan {lootjes[naam]}')
