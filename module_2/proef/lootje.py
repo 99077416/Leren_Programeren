@@ -17,8 +17,7 @@ for i in range(0,len(namen)):
     else:
         lootjes[namen[i]] = namen[i+1]
 
+
 opvragen = input('van wie wil je het lootje weten? ')
 
-for naam in lootjes:
-    if naam == opvragen:
-        print(f'{opvragen} is gekoppeld aan {lootjes[naam]}')
+print(f'{opvragen} is gekoppeld aan {lootjes[opvragen]}')
