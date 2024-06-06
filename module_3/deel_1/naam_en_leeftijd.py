@@ -4,26 +4,19 @@ def naam_en_leeftijd():
     leeftijd = input('leeftijd: ')
     woonplaats = input('woonplaats: ')
     
-    dict = {
+    persoon = {
         'name' : naam,
         'age' : leeftijd,
         'city' : woonplaats
     }
-    return dict
+    return persoon
+
 
 def vragen():
     door = ''
-    list = []
+    personen = []
     while door != 'stop':
-
-        dict = naam_en_leeftijd()
-
-        
-        list.append(f"{dict['name']}, die in {dict['city']} woont, is {dict['age']} jaar")
+        personen.append(naam_en_leeftijd())
         door = input('Toets enter om door te gaan of stop om te printen: ')
-    return list
 
-
-
-for i in vragen():
-    print(i)
+    return personen
