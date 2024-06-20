@@ -9,8 +9,8 @@ n1 = int(input('getal1: '))
 
 
 while choice != 'i':
-
-    n2 = int(input('getal2: '))
+    if choice not in efgh:
+        n2 = int(input('getal2: '))
 
     if choice == 'a':
         uitkomst = functions.addition(n1,n2)
@@ -30,7 +30,7 @@ while choice != 'i':
 
     elif choice == 'e':
         uitkomst = functions.addition(n1,1)
-        print(f'{n1} + {2} = {uitkomst}')
+        print(f'{n1} + {1} = {uitkomst}')
 
     elif choice == 'f':
         uitkomst = functions.subtraction(n1,1)
@@ -45,4 +45,6 @@ while choice != 'i':
         print(f'{n1} / {2} = {uitkomst}')
 
     n1 = uitkomst
-    choice = input(f'Wil je wat met de uitkomst ({uitkomst}) doen? A) iets optellen, B) iets aftrekken, C) met iets vermenigvuldigen, D) ergens door delen, E) ophogen, F) verlagen, G) verdubbelen, H) halveren of I) niets?').lower()
+    choice = ''
+    while choice == '':
+        choice = input(f'Wil je wat met de uitkomst ({uitkomst}) doen? \nA) iets optellen, \nB) iets aftrekken, \nC) met iets vermenigvuldigen, \nD) ergens door delen, \nE) ophogen, \nF) verlagen, \nG) verdubbelen, \nH) halveren of \nI) niets?').lower()
