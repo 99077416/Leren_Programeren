@@ -114,7 +114,7 @@ if startPrepwork:
     chapterNr += 1
     print_chapter(chapterNr, 'THE PREPWORK')
 
-    if JOURNEY_IN_DAYS == 0:
+    if JOURNEY_IN_DAYS == 11:
         if len(mainCharacter['name']) == 0:
             print_colorvars('Ongeduldig als de jonge avonturier werd de reis direct gestart.')
         else:
