@@ -191,7 +191,6 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
     investorsCuts = getInvestorsCuts(profitGold,investors)
 
     fellowship = [mainCharacter] + adventuringFriends + adventuringInvestors
-
     
     # verdeel de uitkomsten
     for person in people:
