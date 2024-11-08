@@ -1,6 +1,6 @@
 import time
 from termcolor import colored
-from data import *
+from data import COST_FOOD_HUMAN_COPPER_PER_DAY,COST_FOOD_HORSE_COPPER_PER_DAY,JOURNEY_IN_DAYS,COST_HORSE_SILVER_PER_DAY,COST_TENT_GOLD_PER_WEEK,COST_INN_HUMAN_SILVER_PER_NIGHT,COST_INN_HORSE_COPPER_PER_NIGHT
 import math
 
 
@@ -31,7 +31,7 @@ def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
     gold_per_day += copper2gold(COST_FOOD_HORSE_COPPER_PER_DAY * horses) 
 
     foodcost = gold_per_day * JOURNEY_IN_DAYS
-    return round(foodcost,2)
+    return round(foodcost,2)    
 
 ##################### O06 #####################
 
@@ -102,8 +102,7 @@ def getItemsValueInGold(items:list) -> float:
 def getCashInGoldFromPeople(people:list) -> float:
     gold = 0
     for person in people:
-        cash = person['cash']
-        gold += getPersonCashInGold(cash)
+        gold += getPersonCashInGold(person['cash'])
     return float(round(gold,2))
         
 
@@ -124,7 +123,7 @@ def getAdventuringInvestors(investors:list) -> list:
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
     adventuring_investors = getAdventuringInvestors(investors)
     people = len(adventuring_investors)
-    total_cost = round(getItemsValueInGold(gear) * people,2)
+    total_cost = getItemsValueInGold(gear) * people
 
     horses = people
     tents = people
@@ -143,23 +142,78 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 ##################### O11 #####################
 
 def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
-    pass
+    cost = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * people
+    cost += copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * horses
+    
+    return int(leftoverGold / cost)
+
+    
 
 def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
-    pass
+    cost = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * nightsInInn * people
+    cost += copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * nightsInInn * horses
+    return round(cost,2)
 
 ##################### O13 #####################
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
-    pass
+    list = []
+    for investor in getInterestingInvestors(investors):
+        profit = investor['profitReturn']
+        gold = profit * profitGold / 100
+        list.append(round(gold,2))
+
+    return list
+
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
-    pass
+    gold = profitGold
+
+    for cut in investorsCuts:
+        gold -= cut
+    if gold <= 0:
+        return 0.0
+    else:
+        return round(gold / fellowship,2)
+
 
 ##################### O14 #####################
 
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
-    pass
+
+    people = [mainCharacter] + friends + investors
+    earnings = []
+
+    # haal de juiste inhoud op
+    adventuringFriends = getAdventuringFriends(people)
+    interestingInvestors = getInterestingInvestors(investors)
+    adventuringInvestors = getAdventuringInvestors(investors)
+    investorsCuts = getInvestorsCuts(profitGold,investors)
+
+    fellowship = [mainCharacter] + adventuringFriends + adventuringInvestors
+
+    
+    # verdeel de uitkomsten
+    for person in people:
+        goldCut = getAdventurerCut(profitGold,investorsCuts,len(fellowship))
+        #code aanvullen
+
+
+        cash = getPersonCashInGold(person['cash'])
+        if person in adventuringFriends:
+            goldCut -= 10
+            earnings[0]['end'] += 10
+
+        elif person in adventuringInvestors:
+            goldCut += person['profitReturn'] * profitGold / 100
+
+        earnings.append({
+            'name'   : person['name'],
+            'start'  : cash,
+            'end'    : cash + goldCut
+        })
+
+    return earnings
 
 ##################### view functions #####################
 
