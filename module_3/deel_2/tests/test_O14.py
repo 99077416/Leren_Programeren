@@ -123,8 +123,9 @@ expected = [
     {'name': 'TestInvestor1', 'start': 125.0, 'end': 387.5}
 ]
 result = getEarnigs(500, testarg_mainCharacter_test1_4_5_6, testarg_friends_test6_7, testarg_investors_test3_5_6)
-print(result)
+# print(result)
 test('getEarnigs - test 6',expected, result)
+
 
 
 testarg_investors_test7 = [{

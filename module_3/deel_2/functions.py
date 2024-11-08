@@ -50,8 +50,11 @@ def getShareWithFriends(friends:list) -> list:
     return getFromListByKeyIs(friends, 'shareWith', True)
 
 def getAdventuringFriends(friends:list) -> list:
-    
+
+
     share = getShareWithFriends(friends)
+
+
     return getAdventuringPeople(share)
     
 
@@ -190,27 +193,55 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
     adventuringInvestors = getAdventuringInvestors(investors)
     investorsCuts = getInvestorsCuts(profitGold,investors)
 
-    fellowship = [mainCharacter] + adventuringFriends + adventuringInvestors
-    
-    # verdeel de uitkomsten
+    goldcut = profitGold - sum(investorsCuts)
+
+    cutforoneperson = goldcut / (len(adventuringFriends) + len(adventuringInvestors)+1)
+
     for person in people:
-        goldCut = getAdventurerCut(profitGold,investorsCuts,len(fellowship))
-        #code aanvullen
+        start = getPersonCashInGold(person['cash'])
+        end = start 
 
-
-        cash = getPersonCashInGold(person['cash'])
-        if person in adventuringFriends:
-            goldCut -= 10
-            earnings[0]['end'] += 10
+        if person == mainCharacter:
+            end += len(adventuringFriends) * 10
+            end += cutforoneperson
 
         elif person in adventuringInvestors:
-            goldCut += person['profitReturn'] * profitGold / 100
+            end += (profitGold * person['profitReturn']/100)
+            end += cutforoneperson
+        
+        elif person in adventuringFriends:
+            end -= 10
+            end += cutforoneperson
+
+        elif person in interestingInvestors:
+            end += (profitGold * person['profitReturn']/100)
 
         earnings.append({
             'name'   : person['name'],
-            'start'  : cash,
-            'end'    : cash + goldCut
-        })
+            'start'  : start,
+            'end'    : round(end,2)
+            })
+
+    # fellowship = [mainCharacter] + adventuringFriends + adventuringInvestors
+
+    # # verdeel de uitkomsten
+    # for person in people:
+    #     cash = getPersonCashInGold(person['cash'])
+    #     goldCut = getAdventurerCut(profitGold,investorsCuts,len(fellowship))
+    #     #code aanvullen
+        
+    #     if person in adventuringFriends:
+    #         goldCut -= 10
+    #         earnings[0]['end'] += 10
+
+    #     elif person in adventuringInvestors:
+    #         goldCut += person['profitReturn'] * profitGold / 100
+        
+    #     earnings.append({
+    #         'name'   : person['name'],
+    #         'start'  : cash,
+    #         'end'    : cash + goldCut
+    # })
 
     return earnings
 
