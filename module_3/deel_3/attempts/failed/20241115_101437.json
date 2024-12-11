@@ -1,0 +1,30 @@
+{
+    "roomorder": "4,R,S,T,U,V,W,X,Y,Z",
+    "start": "15-11-2024 10:14:36",
+    "end": "15-11-2024 10:14:36",
+    "data": {
+        "player": {
+            "noice": 0,
+            "pickups": []
+        },
+        "route": {
+            "routetaken": [
+                "step A : 4"
+            ],
+            "doorcode": "",
+            "errors": [],
+            "roomanswers": [
+                "room4 : None"
+            ]
+        },
+        "story": {
+            "fullstory": [
+                "...",
+                "Je bent ergens waar je niet verwacht te zijn.",
+                "Je bent verdwaald geraakt in de dungeon."
+            ],
+            "choices": [],
+            "errors": []
+        }
+    }
+}
