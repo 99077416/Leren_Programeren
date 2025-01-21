@@ -7,7 +7,6 @@ print('Welkom bij PapiGelato je mag alle smaken kiezen zo lang het maar vanille 
 
 while bestellen == 'ja':
     while True:
-        smaak = keuze_smaak('welke smaak wilt u? ')
 
         aantal = aantalBolletjes('Hoeveel bolletjes wilt u? ')
 
@@ -23,13 +22,17 @@ while bestellen == 'ja':
             verpaking = keuze_verpaking(f'Wilt u deze {aantal} bolletje(s) in een hoorntje of een bakje? ')
             break
     
+    toevoegen('bolletjes',aantal)
+    toevoegen(verpaking,1)
+
     print(f'Hier is uw {verpaking} met {aantal} bolletje(s).')
-    bestelling['smaak'] = smaak
-    bestelling['aantal'] = aantal
+
     bestellen = meer_bestellen('Wilt u nog meer bestellen? ')
+
+
+
 
 print()
 bon()
-print('Bedankt en tot ziens!')
 print()
-print(bestelling)
+print('Bedankt en tot ziens!')
