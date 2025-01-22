@@ -3,12 +3,16 @@ from data import *
 
 bestellen = 'ja'
 
-print('Welkom bij PapiGelato je mag alle smaken kiezen zo lang het maar vanille ijs is.')
+print('Welkom bij PapiGelato.')
+
+
 
 while bestellen == 'ja':
     while True:
 
         aantal = aantalBolletjes('Hoeveel bolletjes wilt u? ')
+
+        keuze_smaak(aantal)
 
         if aantal > 8:
             print('Sorry, zulke grote bakken hebben we niet')
@@ -22,15 +26,12 @@ while bestellen == 'ja':
             verpaking = keuze_verpaking(f'Wilt u deze {aantal} bolletje(s) in een hoorntje of een bakje? ')
             break
     
-    toevoegen('bolletjes',aantal)
+    
     toevoegen(verpaking,1)
 
     print(f'Hier is uw {verpaking} met {aantal} bolletje(s).')
 
     bestellen = meer_bestellen('Wilt u nog meer bestellen? ')
-
-
-
 
 print()
 bon()
