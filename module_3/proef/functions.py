@@ -19,6 +19,23 @@ def keuze_smaak(aantal):
             else:
                 print(error_text)
 
+def keuze_topping(aantal,verpaking):
+    while True:
+        topping = input(f'Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus?')
+        if topping in toppings:
+            if topping == 'b':
+                toevoegen(toppings[topping],prijs_slagroom)
+            if topping == 'c':
+                for i in range(aantal):
+                    toevoegen(toppings[topping],prijs_sprinkels)
+            if topping == 'd':
+                if verpaking == 'hoorntje':
+                    toevoegen(toppings[topping],prijs_caramel_hoorntje)
+                if verpaking == 'bakje':
+                    toevoegen(toppings[topping],prijs_caramel_bakje)
+            break
+        else:
+            print(error_text)
 
 def toevoegen(product,aantal):
     if product in bestelling:
@@ -45,13 +62,6 @@ def meer_bestellen(prompt):
 def bon():
     print('---------["Papi Gelato"]---------\n')
 
-    # aantal_bolletjes = bestelling[smaken[i]]
-    # totaal_bolletjes = round(aantal_bolletjes * prijs_bolletje,2)
-    # totaal = totaal_bolletjes
-    # print(f"Bolletjes     {aantal_bolletjes} x €{prijs_bolletje}  = € {totaal_bolletjes}")
-    
-    # print(bestelling)
-
     totaal = 0
     for i in smaken:
         if smaken[i] in bestelling:
@@ -72,7 +82,17 @@ def bon():
         totaal_bakjes = round(aantal_bakjes * prijs_bakje,2)
         totaal += totaal_bakjes
         print(f"Bakjes        {aantal_bakjes} x €{prijs_bakje} = € {totaal_bakjes}")
+    
+    totaal_topping = 0
+    for i in toppings:
+        if toppings[i] in bestelling:
+            topping = toppings[i]
+            prijs_topping = bestelling[topping]
+            totaal_topping += prijs_topping
 
+    if totaal_topping > 0:
+        print(f"Topping                 = € {totaal_topping}")
+    totaal += totaal_topping
 
     print('                        --------- +')
-    print(f'Totaal                  = € {totaal}')
+    print(f'Totaal                  = € {round(totaal,2)}')

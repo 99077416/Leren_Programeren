@@ -5,8 +5,6 @@ bestellen = 'ja'
 
 print('Welkom bij PapiGelato.')
 
-
-
 while bestellen == 'ja':
     while True:
 
@@ -26,7 +24,7 @@ while bestellen == 'ja':
             verpaking = keuze_verpaking(f'Wilt u deze {aantal} bolletje(s) in een hoorntje of een bakje? ')
             break
     
-    
+    keuze_topping(aantal,verpaking)
     toevoegen(verpaking,1)
 
     print(f'Hier is uw {verpaking} met {aantal} bolletje(s).')
