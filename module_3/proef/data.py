@@ -1,23 +1,25 @@
 
 bestelling = {}
 
-prijs_bolletje = 1.10
-prijs_hoorntje = 1.25
-prijs_bakje = 0.75
-
-prijs_slagroom = 0.50
-prijs_sprinkels = 0.30
-prijs_caramel_hoorntje = 0.60
-prijs_caramel_bakje = 0.90
-
 verpaking_keuze = ('bakje','hoorntje')
 bestellen_keuze = ('ja','nee')
 
+prijzen = {
+    'bolletje' : 1.10,
+    'hoorntje' : 1.25,
+    'bakje' : 0.75,
+    'slagroom' : 0.50,
+    'sprinkels' : 0.30,
+    'caramel hoorntje' : 0.60,
+    'caramel bakje' : 0.90,
+    'liter' : 9.80
+}
+
 smaken = {
-    'a' : 'B.Aardbei',
-    'c' : 'B.Chocolade',
-    'm' : 'B.Munt',
-    'v' : 'B.Vanille'
+    'a' : 'Aardbei',
+    'c' : 'Chocolade',
+    'm' : 'Munt',
+    'v' : 'Vanille'
 }
 
 toppings = {

@@ -6,32 +6,46 @@ bestellen = 'ja'
 print('Welkom bij PapiGelato.')
 
 while bestellen == 'ja':
-    while True:
+    klant = int(input('Bent u 1) een particuliere klant of 2) een zakelijke klant? '))
 
-        aantal = aantalBolletjes('Hoeveel bolletjes wilt u? ')
+    if klant == 1:
+        while True:
 
-        keuze_smaak(aantal)
+            aantal = aantalBolletjes('Hoeveel bolletjes wilt u? ')
 
-        if aantal > 8:
-            print('Sorry, zulke grote bakken hebben we niet')
+            if aantal > 8:
+                print('Sorry, zulke grote bakken hebben we niet')
 
-        elif aantal >= 4 and aantal <= 8:
-            print(f'Dan krijgt u van mij een bakje met {aantal} bolletjes')
-            verpaking = 'bakje'
-            break
+            else:
+                keuze_smaak(aantal,smaken,klant,bestelling)
 
-        elif aantal >= 1 and aantal <=3:
-            verpaking = keuze_verpaking(f'Wilt u deze {aantal} bolletje(s) in een hoorntje of een bakje? ')
-            break
+                if aantal >= 4 and aantal <= 8:
+                    print(f'Dan krijgt u van mij een bakje met {aantal} bolletjes')
+                    verpaking = 'bakje'
+                    break
+
+                elif aantal >= 1 and aantal <=3:
+                    verpaking = keuze_verpaking(f'Wilt u deze {aantal} bolletje(s) in een hoorntje of een bakje? ',verpaking_keuze)
+                    break
     
-    keuze_topping(aantal,verpaking)
-    toevoegen(verpaking,1)
+        keuze_topping(aantal,verpaking,toppings,prijzen,bestelling)
+        bestelling = toevoegen(verpaking,1,bestelling)
 
-    print(f'Hier is uw {verpaking} met {aantal} bolletje(s).')
+        print(f'Hier is uw {verpaking} met {aantal} bolletje(s).')
 
-    bestellen = meer_bestellen('Wilt u nog meer bestellen? ')
+        bestellen = meer_bestellen('Wilt u nog meer bestellen? ',bestellen_keuze)
 
-print()
-bon()
+        bon(bestelling,smaken,toppings,prijzen,klant)
+
+    elif klant == 2:
+        aantal = aantalBolletjes('hoeveel liter ijs wilt u? ')
+        keuze_smaak(aantal,smaken,klant,bestelling)
+        bon(bestelling,smaken,toppings,prijzen,klant)
+
+        break
+
+    else:
+        print(error_text)
+        
 print()
 print('Bedankt en tot ziens!')
