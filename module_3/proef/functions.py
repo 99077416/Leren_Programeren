@@ -1,4 +1,4 @@
-error_text = 'Sorry,dat snap ik niet...'
+error_text = 'Sorry dat is geen optie die we aanbieden... '
 
 def aantalBolletjes(prompt):
     while True:
