@@ -109,7 +109,7 @@ def bon(bestelling,smaken,toppings,prijzen,klant):
                 totaal_liter = round(aantal_liter * prijs_liter,2)
                 totaal += totaal_liter
                 print(f"L.{smaak:10}  {aantal_liter:3.0f} x €{prijs_liter:0.2f} = €{totaal_liter:3.2f}")
-        btw = totaal_liter / 100 * 9
+        btw = totaal_liter / 100 * 6
 
         print(f"{'':25}---------")
         print(f"{'Totaal':25} = €{totaal:0.2f}")
