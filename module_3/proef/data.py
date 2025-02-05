@@ -18,7 +18,6 @@ prijzen = {
 smaken = {
     'a' : 'Aardbei',
     'c' : 'Chocolade',
-    'm' : 'Munt',
     'v' : 'Vanille'
 }
 

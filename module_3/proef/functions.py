@@ -14,7 +14,7 @@ def keuze_smaak(aantal,smaken,klant,bestelling):
         type = 'liter'
     for i in range(1,aantal+1):
         while True:
-            smaak = input(f'Welke smaak wilt u voor {type} nummer {i}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ')
+            smaak = input(f'Welke smaak wilt u voor {type} nummer {i}? A) Aardbei, C) Chocolade of V) Vanille? ')
 
             if smaak in smaken:
                 toevoegen(smaken[smaak],1,bestelling)
