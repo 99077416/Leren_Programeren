@@ -22,30 +22,26 @@ while bestellen == 'ja':
                 if aantal >= 4 and aantal <= 8:
                     print(f'Dan krijgt u van mij een bakje met {aantal} bolletjes')
                     verpaking = 'bakje'
-                    break
 
                 elif aantal >= 1 and aantal <=3:
                     verpaking = keuze_verpaking(f'Wilt u deze {aantal} bolletje(s) in een hoorntje of een bakje? ',verpaking_keuze)
-                    break
     
-        keuze_topping(aantal,verpaking,toppings,prijzen,bestelling)
-        bestelling = toevoegen(verpaking,1,bestelling)
+            keuze_topping(aantal,verpaking,toppings,prijzen,bestelling)
+            bestelling = toevoegen(verpaking,1,bestelling)
 
-        print(f'Hier is uw {verpaking} met {aantal} bolletje(s).')
+            print(f'Hier is uw {verpaking} met {aantal} bolletje(s).')
 
-        bestellen = meer_bestellen('Wilt u nog meer bestellen? ',bestellen_keuze)
-
-        bon(bestelling,smaken,toppings,prijzen,klant)
+            bestellen = meer_bestellen('Wilt u nog meer bestellen? ',bestellen_keuze)
+            break
 
     elif klant == 2:
         aantal = aantalBolletjes('hoeveel liter ijs wilt u? ')
         keuze_smaak(aantal,smaken,klant,bestelling)
-        bon(bestelling,smaken,toppings,prijzen,klant)
-
         break
 
     else:
         print(error_text)
-        
+    
+bon(bestelling,smaken,toppings,prijzen,klant)
 print()
 print('Bedankt en tot ziens!')

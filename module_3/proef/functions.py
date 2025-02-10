@@ -3,7 +3,11 @@ error_text = 'Sorry dat is geen optie die we aanbieden... '
 def aantalBolletjes(prompt):
     while True:
         try:
-            return int(input(prompt))
+            aantal = int(input(prompt))
+            if aantal > 1:
+                return aantal
+            else:
+                print(error_text)
         except ValueError:
             print(error_text)
 
@@ -98,7 +102,7 @@ def bon(bestelling,smaken,toppings,prijzen,klant):
             print(f"{'Topping':25}= €{totaal_topping:0.2f}")
         totaal += totaal_topping
         print(f"{'':20}   ---------")
-        print(f"{'Totaal':25}= €{round(totaal,2)}")
+        print(f"{'Totaal':25}= €{totaal:0.2f}")
     elif klant == 2:
         totaal = 0
         for i in smaken:
